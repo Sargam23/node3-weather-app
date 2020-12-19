@@ -6,10 +6,7 @@ const forecase=require('./utils/forecast')
 const forecast = require("./utils/forecast")
 
 const app=express()
-
-console.log(__dirname)
-console.log(path.join(__dirname,"../public"))
-
+const port=process.env.PORT ||3000
 
 //define paths
 const publicdirectorypath=path.join(__dirname,"../public")
@@ -107,7 +104,7 @@ app.get("*",(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log("Server is up on port 3000")
+app.listen(port,()=>{
+    console.log("Server is up on port "+port)
 
 })
